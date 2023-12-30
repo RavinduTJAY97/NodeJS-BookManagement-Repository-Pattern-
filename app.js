@@ -1,15 +1,15 @@
-import express, { urlencoded, json } from "express";
+const express = require("express");
 const app = express();
-import cors from "cors";
+const cors = require("cors");
 
 app.use(cors());
 
 app.use(
-  urlencoded({
+  express.urlencoded({
     extended: true,
   })
 );
 
-app.use(json());
+app.use(express.json());
 
-export default app;
+module.exports = app;
